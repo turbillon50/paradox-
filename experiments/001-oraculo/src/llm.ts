@@ -31,6 +31,7 @@ export async function chat(
       Authorization: `Bearer ${cfg.apiKey}`,
     },
     body: JSON.stringify({
+      policy: "local",
       model: cfg.model,
       temperature: 0.7,
       max_tokens: 300,

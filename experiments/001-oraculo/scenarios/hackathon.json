@@ -1,0 +1,7 @@
+{
+  "titulo": "MindContextIA en el hackathon",
+  "descripcion": "Un founder solitario de LATAM presenta MindContextIA en un hackathon de IA: plataforma de orquestacion de contexto multi-tenant sobre MCP, con demo en vivo de una flota de GPUs propias que se balancean solas con fallback automatico, y un motor de simulacion multi-agente (Paradox) que delibera decisiones de negocio. Compite contra equipos mas grandes y con mas funding. Los jueces valoran demo funcional en vivo, originalidad tecnica y potencial de negocio. El riesgo: las demos en vivo pueden fallar y el pitch es de un solo hombre.",
+  "pregunta": "¿La presentacion de MindContextIA seria un exito en el hackathon (destacar, ganar premio o conseguir traccion real con jueces e inversionistas presentes)?",
+  "nivelRiesgo": 0.6,
+  "nivelNovedad": 0.8
+}
