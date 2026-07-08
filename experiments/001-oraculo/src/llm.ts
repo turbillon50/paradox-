@@ -6,6 +6,7 @@ export interface LlmConfig {
   apiKey: string;
   baseUrl: string;
   model: string;
+  maxTokens: number;
 }
 
 export function leerConfigLlm(): LlmConfig | null {
@@ -15,6 +16,11 @@ export function leerConfigLlm(): LlmConfig | null {
     apiKey,
     baseUrl: (process.env.LLM_BASE_URL || "https://api.cerebras.ai/v1").replace(/\/$/, ""),
     model: process.env.LLM_MODEL || "llama-3.3-70b",
+    // Los modelos de razonamiento (p.ej. gpt-oss-120b) gastan tokens "pensando"
+    // (reasoning_tokens) del MISMO presupuesto antes de escribir la respuesta.
+    // Con un batch de N agentes hace falta espacio para el reasoning + el JSON
+    // array completo, si no el content vuelve vacío con finish_reason "length".
+    maxTokens: Math.max(1, parseInt(process.env.LLM_MAX_TOKENS || "4000", 10) || 4000),
   };
 }
 
@@ -33,7 +39,7 @@ export async function chat(
     body: JSON.stringify({
       model: cfg.model,
       temperature: 0.7,
-      max_tokens: 300,
+      max_tokens: cfg.maxTokens,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },

@@ -147,7 +147,7 @@ async function rondaLlm(
   for (let intento = 0; intento < 2; intento++) {
     try {
       const texto = await chat(cfg, system, user);
-      const porId = indexarPorId(parseArrayBatch(texto));
+      const porId = indexarPorId(parseArrayBatch(texto, agentes.length));
       if (porId.size > mejorPorId.size) mejorPorId = porId;
       const completos = agentes.filter((a) => esItemValido(porId.get(a.id))).length;
       if (completos === agentes.length) {
@@ -169,12 +169,17 @@ async function rondaLlm(
   });
 }
 
-function parseArrayBatch(texto: string): ItemBatch[] {
+function parseArrayBatch(texto: string, esperados: number): ItemBatch[] {
   const i = texto.indexOf("[");
   const j = texto.lastIndexOf("]");
   const crudo = i >= 0 && j > i ? texto.slice(i, j + 1) : "[]";
   const arr = JSON.parse(crudo);
   if (!Array.isArray(arr)) throw new Error("la respuesta no es un array");
+  if (arr.length < esperados) {
+    console.warn(
+      `⚠️  batch incompleto: llegaron ${arr.length} items de ${esperados} agentes esperados`,
+    );
+  }
   return arr as ItemBatch[];
 }
 
