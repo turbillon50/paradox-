@@ -1,0 +1,15 @@
+{
+  "name": "paradox-oraculo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Motor de simulación multi-agente para predecir escenarios (Paradox lab, exp. 001)",
+  "type": "module",
+  "scripts": {
+    "sim": "tsx src/index.ts",
+    "sim:ejemplo": "tsx src/index.ts scenarios/lanzamiento-mercado.json --agentes 16 --rondas 4"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
