@@ -92,9 +92,10 @@ async function reaccionLlm(
     (a.memoria.length ? `Recordás: ${a.memoria.join("; ")}\n` : "") +
     "Respondé con tu postura en JSON.";
 
-  // Hasta 2 intentos: si el parse falla o no hay postura válida, se reintenta
-  // una vez antes de caer al neutral silencioso.
-  for (let intento = 0; intento < 2; intento++) {
+  // Hasta 3 intentos. Un parse inválido reintenta de inmediato; un error HTTP
+  // 5xx (típico del router bajo carga) reintenta con espera 500-1500ms + jitter.
+  const MAX_INTENTOS = 3;
+  for (let intento = 0; intento < MAX_INTENTOS; intento++) {
     try {
       const texto = await chat(cfg, system, user);
       const json = JSON.parse(extraerJson(texto));
@@ -107,8 +108,12 @@ async function reaccionLlm(
         intensidad: clamp01(Number(json.intensidad) || 0.5),
         razon: String(json.razon || "").slice(0, 200),
       };
-    } catch {
-      // reintenta una vez; si vuelve a fallar, cae al fallback de abajo
+    } catch (e) {
+      // Si aún quedan intentos y el error es 5xx, esperamos con jitter para
+      // no golpear al router saturado. Otros errores reintentan de inmediato.
+      if (intento < MAX_INTENTOS - 1 && esError5xx(e)) {
+        await dormir(500 + Math.random() * 1000);
+      }
     }
   }
   return { agentId: a.id, postura: "neutral", intensidad: 0.4, razon: RAZON_FALLBACK };
@@ -124,6 +129,39 @@ function clamp01(x: number): number {
   return Math.max(0, Math.min(1, x));
 }
 
+function dormir(ms: number): Promise<void> {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+/** ¿El error viene de un HTTP 5xx? (chat() codifica el status en el mensaje). */
+function esError5xx(e: unknown): boolean {
+  return e instanceof Error && /LLM 5\d\d/.test(e.message);
+}
+
+/**
+ * Ejecuta `fn` sobre cada item con concurrencia LIMITADA (máximo `limite` en
+ * vuelo a la vez). Preserva el orden de los resultados. Sin dependencias:
+ * varios "workers" toman ítems de una cola compartida por índice.
+ */
+async function poolMap<T, R>(
+  items: T[],
+  limite: number,
+  fn: (item: T, idx: number) => Promise<R>,
+): Promise<R[]> {
+  const resultados: R[] = new Array(items.length);
+  let siguiente = 0;
+  const worker = async () => {
+    while (true) {
+      const i = siguiente++;
+      if (i >= items.length) return;
+      resultados[i] = await fn(items[i], i);
+    }
+  };
+  const n = Math.max(1, Math.min(limite, items.length));
+  await Promise.all(Array.from({ length: n }, () => worker()));
+  return resultados;
+}
+
 // ---- Orquestador ----
 
 export async function simular(
@@ -133,6 +171,9 @@ export async function simular(
 ): Promise<{ prediccion: Prediccion; historial: RondaResultado[] }> {
   const cfg = leerConfigLlm();
   const usaLlm = cfg !== null;
+  // Concurrencia limitada para no saturar routers con backlog corto / worker
+  // único (evita 502 por avalancha de requests simultáneos).
+  const limiteConcurrencia = Math.max(1, parseInt(process.env.LLM_CONCURRENCY || "3", 10) || 3);
   const rng = crearRng(hashTexto(esc.titulo) ^ (opts.agentes * 2654435761));
 
   const historial: RondaResultado[] = [];
@@ -146,8 +187,8 @@ export async function simular(
 
     let reacciones: Reaccion[];
     if (usaLlm && cfg) {
-      reacciones = await Promise.all(
-        agentes.map((a) => reaccionLlm(cfg, a, esc, resumenPar)),
+      reacciones = await poolMap(agentes, limiteConcurrencia, (a) =>
+        reaccionLlm(cfg, a, esc, resumenPar),
       );
     } else {
       reacciones = agentes.map((a) => {

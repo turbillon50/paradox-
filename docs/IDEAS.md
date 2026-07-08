@@ -33,6 +33,19 @@ Antes de construir de más, validar. Señal real = alguien **usa y vuelve**, o
 
 ---
 
+## Calibración del motor (aprendizajes)
+
+- **El fix de conformismo funcionó**, pero el columpio es fuerte: medir la
+  presión social entre opinantes (en vez de sobre el total) hizo que el mismo
+  escenario pasara de `-0.44` a `+0.88`. Es correcto conceptualmente, pero la
+  magnitud del giro sugiere que la presión social pesa demasiado temprano.
+- **Idea futura:** amortiguar la presión social en las **rondas tempranas**
+  cuando hay **pocos opinantes** (la señal todavía es ruidosa). P.ej. escalar
+  `presionPar` por un factor `min(1, opinantes / umbral)` o por el número de
+  ronda, para que la mayoría no se "cristalice" en la ronda 2.
+
+---
+
 ## Memoria real de agentes (fase MindContextIA)
 
 **Estado actual (exp. 001):** la "memoria" de cada agente solo guarda entradas
