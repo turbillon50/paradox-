@@ -49,4 +49,6 @@ export interface Prediccion {
   confianza: number;     // 0..1, qué tan marcada/consistente es la tendencia
   veredicto: string;
   motor: "llm" | "offline";
+  /** Reacciones que cayeron al fallback silencioso (solo modo LLM). */
+  fallbacks: number;
 }

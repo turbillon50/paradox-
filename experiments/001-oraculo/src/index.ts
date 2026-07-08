@@ -69,6 +69,10 @@ async function main() {
   console.log(`Favorabilidad: ${prediccion.favorabilidad}  (rango -1 a +1)`);
   console.log(`Confianza    : ${Math.round(prediccion.confianza * 100)}%`);
   console.log(`Veredicto    : ${prediccion.veredicto}`);
+  if (prediccion.motor === "llm") {
+    const tot = prediccion.totalAgentes * prediccion.rondas;
+    console.log(`Fallbacks    : ${prediccion.fallbacks}/${tot} reacciones sin respuesta clara del modelo`);
+  }
   console.log(`Tiempo       : ${ms} ms\n`);
 
   // Muestra de razones (primeros 5 agentes de la última ronda)

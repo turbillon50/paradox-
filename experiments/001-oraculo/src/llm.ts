@@ -33,6 +33,7 @@ export async function chat(
     body: JSON.stringify({
       model: cfg.model,
       temperature: 0.7,
+      max_tokens: 300,
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -44,7 +45,11 @@ export async function chat(
     throw new Error(`LLM ${res.status}: ${await res.text()}`);
   }
   const data = (await res.json()) as {
-    choices?: { message?: { content?: string } }[];
+    choices?: { message?: { content?: string; reasoning?: string } }[];
   };
-  return data.choices?.[0]?.message?.content ?? "";
+  // Algunos modelos (p.ej. gpt-oss-120b vía mesh) devuelven el texto útil en
+  // message.reasoning cuando message.content viene vacío o cortado.
+  const msg = data.choices?.[0]?.message;
+  const content = msg?.content?.trim();
+  return content && content.length > 0 ? content : (msg?.reasoning ?? "");
 }
