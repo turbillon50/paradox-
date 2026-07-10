@@ -10,27 +10,41 @@ La entrada son **perfiles declarados con consentimiento explícito**. No hay
 scraping ni ingesta automática de redes de terceros. Cada perfil trae un bloque
 `consentimiento`, y el motor **descarta de entrada** a cualquiera con
 `autorizado: false`. El conteo de descartados sale en el resumen, como evidencia
-de que el guard corrió.
+de que el guard corrió. Esto aplica en **ambos modos** (determinista y LLM).
 
 La capa `contexto` (señales públicas de mercado: temas, tendencias, fuentes de
 interés) solo **refuerza** conexiones — nunca perfila individuos.
+
+## Dos modos
+
+- **Determinista (default, offline):** cruza por coincidencia de términos
+  normalizados. Sin API keys, reproducible.
+- **Semántico (Cerebras):** si defines `LLM_API_KEY`, delega en un LLM que
+  detecta matches por **significado** (p. ej. "levantar ronda semilla" ↔
+  "inversionista ángel activo", aunque no compartan palabras). El guard de
+  consentimiento se aplica **antes** de mandar nada al modelo, y solo se envían
+  los perfiles autorizados. Ante cualquier falla (JSON inválido, red, id
+  alucinado) cae al determinista.
 
 ## Cómo corre
 
 ```bash
 npm install
-npm run sim            # corre el escenario scenarios/ejemplo.json
-npm run sim otro       # corre scenarios/otro.json
-npm run typecheck      # valida tipos sin compilar
-```
+npm run sim                 # escenario scenarios/ejemplo.json (determinista)
+npm run sim otro            # scenarios/otro.json
+npm run typecheck           # valida tipos sin compilar
 
-Corre **offline y determinista** — sin API keys. Mismo espíritu que el 001.
+# modo semántico:
+cp .env.example .env        # completa LLM_API_KEY
+npm run sim
+```
 
 ## Qué busca el motor
 
 - **Directo:** comparten objetivos o intereses.
 - **Complementario (no obvio):** lo que uno *busca* es justo lo que el otro
-  *ofrece*, aunque no compartan intereses. Estos pesan más — son el oro.
+  *ofrece*. Estos pesan más — son el oro. En modo semántico el match no necesita
+  palabras iguales, basta que signifiquen lo mismo.
 
 Salida ordenada por fuerza (0–1), con la razón explicada en claro.
 
@@ -59,5 +73,4 @@ explícita registrada).
 
 ## Estado
 
-🟢 corre · determinista · siguiente paso: enchufar a Cerebras para que redacte
-las razones y detecte matches semánticos (no solo por coincidencia exacta).
+🟢 corre · determinista + semántico (Cerebras) · fallback duro al determinista.
