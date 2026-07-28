@@ -40,3 +40,16 @@ for tf in glob.glob(AQUI + "/teorias/*.json"):
     out = os.path.join(ddir, HOY + ".json")
     json.dump(salida, open(out, "w"), ensure_ascii=False, indent=1)
     print("guardado:", out, "| temas medidos:", len(salida["mediciones"]))
+
+
+# construir serie acumulada por teoria (la lee el visor web)
+for tf in glob.glob(AQUI + "/teorias/*.json"):
+    T = json.load(open(tf))
+    slug = os.path.basename(tf)[:-5]
+    ddir = os.path.join(AQUI, "datos", slug)
+    serie = {"teoria": T["teoria"], "enunciado": T.get("enunciado",""), "hipotesis": T.get("hipotesis",[]), "dias": []}
+    for f in sorted(glob.glob(ddir + "/2*.json")):
+        d = json.load(open(f))
+        serie["dias"].append({"fecha": d["fecha"], "temas": {m["tema"]: {"i": m["indice_neutro"], "t": m["tendencia"], "lectura": m.get("lectura",""), "plataformas": m.get("plataformas",[])} for m in d["mediciones"]}})
+    json.dump(serie, open(os.path.join(ddir, "serie.json"), "w"), ensure_ascii=False)
+    print("serie:", slug, len(serie["dias"]), "dias")
