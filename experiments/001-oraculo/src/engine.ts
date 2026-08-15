@@ -98,8 +98,25 @@ async function reaccionLlm(
   for (let intento = 0; intento < MAX_INTENTOS; intento++) {
     try {
       const texto = await chat(cfg, system, user);
-      const json = JSON.parse(extraerJson(texto));
-      if (!["a_favor", "en_contra", "neutral"].includes(json.postura)) {
+      let json: any = null;
+      try { json = JSON.parse(extraerJson(texto)); } catch { json = null; }
+
+      if (!json || !["a_favor", "en_contra", "neutral"].includes(json.postura)) {
+        // Rescate: leer la postura del texto libre del modelo.
+        const t = texto.toLowerCase();
+        const enContra = /en_contra|en contra|no compraría|no compraria|rechaz|escéptic|esceptic|desconfí|desconfi|demasiado (caro|riesgoso)|no me convence|dudo/.test(t);
+        const aFavor = /a_favor|a favor|sí compraría|si compraria|compraría|me interesa|vale la pena|buena oportunidad|atractiv/.test(t);
+        const postura: Postura = enContra && !aFavor ? "en_contra" : aFavor && !enContra ? "a_favor" : "neutral";
+        // La razón útil es la última frase con sustancia que escribió el modelo.
+        const frases = texto.replace(/\s+/g, " ").split(/(?<=[.!?])\s/).filter((f) => f.length > 30);
+        let razon = (frases[frases.length - 1] || texto).trim();
+        // si el modelo devolvio el JSON dentro de la prosa, sacar solo la razon
+        const mr = razon.match(/"razon"\s*:\s*"([^"]{20,})"/);
+        if (mr) razon = mr[1];
+        razon = razon.replace(/^[{\["']+/, "").trim().slice(0, 200);
+        if (razon.length > 20) {
+          return { agentId: a.id, postura, intensidad: 0.6, razon };
+        }
         throw new Error("respuesta sin postura válida");
       }
       return {

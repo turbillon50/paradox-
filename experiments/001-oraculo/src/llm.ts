@@ -34,7 +34,7 @@ export async function chat(
       policy: "local",
       model: cfg.model,
       temperature: 0.7,
-      max_tokens: 300,
+      max_tokens: Number(process.env.LLM_MAX_TOKENS || 900),
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
