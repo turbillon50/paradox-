@@ -1,0 +1,91 @@
+{
+  "participantes": [
+    {
+      "id": "p1",
+      "nombre": "Participante A",
+      "objetivos": [
+        "Construir un prototipo de IA generativa",
+        "Escalar clientes en SaaS"
+      ],
+      "intereses": ["IA generativa", "Ventas B2B"],
+      "aportaciones": ["Conexiones con aceleradoras", "Experiencia en ventas B2B"],
+      "consentimiento": {
+        "autorizado": true,
+        "fuente": "self",
+        "fecha": "2026-06-01T10:00:00Z"
+      }
+    },
+    {
+      "id": "p2",
+      "nombre": "Participante B",
+      "objetivos": [
+        "Conseguir financiacion para fintech LATAM",
+        "Experiencia en ventas B2B"
+      ],
+      "intereses": ["Fintech", "Banca digital"],
+      "aportaciones": ["Red de inversores", "Conocimiento regulatorio LATAM"],
+      "consentimiento": {
+        "autorizado": true,
+        "fuente": "self",
+        "fecha": "2026-06-02T11:15:00Z"
+      }
+    },
+    {
+      "id": "p3",
+      "nombre": "Participante C",
+      "objetivos": [
+        "Validar mercado para IA generativa",
+        "Obtener feedback de usuarios"
+      ],
+      "intereses": ["IA generativa", "UX"],
+      "aportaciones": [
+        "Construir un prototipo de IA generativa",
+        "Dataset de entrenamiento"
+      ],
+      "consentimiento": {
+        "autorizado": true,
+        "fuente": "self",
+        "fecha": "2026-06-03T09:30:00Z"
+      }
+    },
+    {
+      "id": "p4",
+      "nombre": "Participante D",
+      "objetivos": [
+        "Crear comunidad de creativos",
+        "Conseguir financiacion para fintech LATAM"
+      ],
+      "intereses": ["Creatividad", "Marketing digital"],
+      "aportaciones": ["Plataforma de colaboracion", "Red de creativos"],
+      "consentimiento": {
+        "autorizado": true,
+        "fuente": "delegado",
+        "fecha": "2026-06-04T14:45:00Z"
+      }
+    },
+    {
+      "id": "p5",
+      "nombre": "Participante E",
+      "objetivos": ["Desarrollar una app de fintech", "Obtener usuarios beta"],
+      "intereses": ["Fintech", "Experiencia de usuario"],
+      "aportaciones": ["Experiencia en desarrollo movil"],
+      "consentimiento": {
+        "autorizado": false,
+        "fuente": "self",
+        "fecha": "2026-06-05T08:20:00Z"
+      }
+    }
+  ],
+  "contexto": [
+    {
+      "tema": "IA generativa",
+      "señal": "Alta demanda de prototipos y validacion de mercado en 2026",
+      "relevancia": 0.9
+    },
+    {
+      "tema": "Fintech",
+      "señal": "Inversion sostenida en fintech LATAM",
+      "relevancia": 0.7
+    }
+  ]
+}

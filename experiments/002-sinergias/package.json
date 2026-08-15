@@ -1,0 +1,15 @@
+{
+  "name": "002-sinergias",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Motor de descubrimiento de conexiones no obvias sobre perfiles declarados (opt-in).",
+  "scripts": {
+    "sim": "ts-node src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.0"
+  }
+}
