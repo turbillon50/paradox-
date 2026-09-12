@@ -1,0 +1,31 @@
+{
+  "teoria": "Tulum se va a recuperar",
+  "enunciado": "Tras la caída de ocupación y reputación, Tulum entra en recuperación gradual impulsada por conectividad (aeropuerto y Tren Maya), corrección de precios y control del sargazo.",
+  "hipotesis": [
+    {
+      "id": "H1",
+      "texto": "La conversación de turismo en Tulum vuelve a crecer de forma orgánica, no solo en prensa"
+    },
+    {
+      "id": "H2",
+      "texto": "El tema sargazo pierde intensidad relativa conforme avanza la temporada"
+    },
+    {
+      "id": "H3",
+      "texto": "Conectividad (aeropuerto/Tren Maya) sostiene atención positiva estable"
+    },
+    {
+      "id": "H4",
+      "texto": "Seguridad deja de dominar el framing de la conversación sobre Tulum"
+    }
+  ],
+  "temas": [
+    "Tulum turismo recuperación",
+    "sargazo Tulum",
+    "aeropuerto Tulum vuelos",
+    "Tren Maya Tulum",
+    "seguridad Tulum"
+  ],
+  "creado": "2026-07-28",
+  "motor": "https://pulso-neutro.vercel.app/api/medir"
+}
