@@ -1,0 +1,251 @@
+{
+ "fecha": "2026-08-13",
+ "teoria": "Tulum se va a recuperar",
+ "mediciones": [
+  {
+   "tema": "Tulum turismo recuperación",
+   "indice_neutro": 40,
+   "tendencia": "subiendo",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 50,
+     "d": 10,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 40,
+     "d": 0,
+     "s": "negativo"
+    },
+    {
+     "n": "YouTube",
+     "i": 30,
+     "d": -10,
+     "s": "negativo"
+    },
+    {
+     "n": "TikTok",
+     "i": 30,
+     "d": -10,
+     "s": "negativo"
+    },
+    {
+     "n": "Facebook",
+     "i": 60,
+     "d": 20,
+     "s": "positivo"
+    },
+    {
+     "n": "Medios",
+     "i": 70,
+     "d": 30,
+     "s": "positivo"
+    }
+   ],
+   "lectura": "Facebook y los Medios distorsionan más la realidad al amplificar el lado positivo de la recuperación, mientras que X, Reddit, YouTube y TikTok reflejan una visión más crítica y negativa por parte de los usuarios y experiencias personales.",
+   "fuentes": [
+    "Tulum: Sheinbaum es elogiada por hoteleros ante plan de recuperación — REPORTUR.com",
+    "Hoteleros respaldan plan para recuperar el turismo en Tulum y fortalecer la Riviera Maya — La Region Tamaulipas",
+    "Tulum está trabajando para recuperar el turismo tras crisis por aumento de precios — Forbes México"
+   ]
+  },
+  {
+   "tema": "sargazo Tulum",
+   "indice_neutro": 70,
+   "tendencia": "subiendo",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 80,
+     "d": 10,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 60,
+     "d": -10,
+     "s": "negativo"
+    },
+    {
+     "n": "YouTube",
+     "i": 70,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "TikTok",
+     "i": 75,
+     "d": 5,
+     "s": "negativo"
+    },
+    {
+     "n": "Facebook",
+     "i": 90,
+     "d": 20,
+     "s": "negativo"
+    },
+    {
+     "n": "Medios",
+     "i": 85,
+     "d": 15,
+     "s": "negativo"
+    }
+   ],
+   "lectura": "Facebook es la red que más distorsiona al amplificar la negatividad y la urgencia debido a su función de monitoreo en tiempo real y la difusión de noticias alarmantes sobre el récord de sargazo.",
+   "fuentes": [
+    "Cae la ocupación hotelera en Tulum más del 20%: Evalúan operar de forma estacional y cierres temporales — Diario 24 Horas Quintana Roo",
+    "Refuerzan en Tulum estrategia nacional para atender el sargazo — El Heraldo de México",
+    "Cierran hoteles en Tulum por baja afluencia turística — grupopiramide.com.mx"
+   ]
+  },
+  {
+   "tema": "aeropuerto Tulum vuelos",
+   "indice_neutro": 40,
+   "tendencia": "bajando",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 45,
+     "d": 5,
+     "s": "positivo"
+    },
+    {
+     "n": "Reddit",
+     "i": 10,
+     "d": -30,
+     "s": "neutro"
+    },
+    {
+     "n": "YouTube",
+     "i": 60,
+     "d": 20,
+     "s": "positivo"
+    },
+    {
+     "n": "TikTok",
+     "i": 30,
+     "d": -10,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 55,
+     "d": 15,
+     "s": "positivo"
+    },
+    {
+     "n": "Medios",
+     "i": 80,
+     "d": 40,
+     "s": "positivo"
+    }
+   ],
+   "lectura": "YouTube es la red que más distorsiona por la naturaleza de sus videos que pueden generar mayor interacción y visibilidad en comparación con otras plataformas.",
+   "fuentes": [
+    "Tulum: fracasa el aeropuerto al caer vuelos pese a Cuba y Jamaica — REPORTUR.com",
+    "Aerolíneas de Estados Unidos y Canadá retoman vuelos al Aeropuerto Internacional de Tulum — La Jornada Maya",
+    "Caen vuelos y viajeros en el Aeropuerto Internacional de Tulum durante primeros meses de 2026 — UnoTV"
+   ]
+  },
+  {
+   "tema": "Tren Maya Tulum",
+   "indice_neutro": 48,
+   "tendencia": "estable",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 50,
+     "d": 2,
+     "s": "neutro"
+    },
+    {
+     "n": "Reddit",
+     "i": 60,
+     "d": 12,
+     "s": "neutro"
+    },
+    {
+     "n": "YouTube",
+     "i": 70,
+     "d": 22,
+     "s": "negativo"
+    },
+    {
+     "n": "TikTok",
+     "i": 30,
+     "d": -18,
+     "s": "positivo"
+    },
+    {
+     "n": "Facebook",
+     "i": 40,
+     "d": -8,
+     "s": "neutro"
+    },
+    {
+     "n": "Medios",
+     "i": 50,
+     "d": 2,
+     "s": "neutro"
+    }
+   ],
+   "lectura": "YouTube distorsiona más debido a la prevalencia de contenido crítico y de experiencias negativas con el tren.",
+   "fuentes": [
+    "Refuerzan conectividad aérea y del Tren Maya en Tulum para las vacaciones de verano — NewsDay Caribe",
+    "Visit México incluye compra de boletos de Mexicana y Tren Maya — REPORTUR.com",
+    "Ejército desplaza al INAH para cobrar entrada a Zona Arqueológica de Tulum y destinarlo al Tren Maya — yucatan.com.mx"
+   ]
+  },
+  {
+   "tema": "seguridad Tulum",
+   "indice_neutro": 40,
+   "tendencia": "estable",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 50,
+     "d": 10,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 60,
+     "d": 20,
+     "s": "neutro"
+    },
+    {
+     "n": "YouTube",
+     "i": 30,
+     "d": -10,
+     "s": "neutro"
+    },
+    {
+     "n": "TikTok",
+     "i": 20,
+     "d": -20,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 70,
+     "d": 30,
+     "s": "positivo"
+    },
+    {
+     "n": "Medios",
+     "i": 40,
+     "d": 0,
+     "s": "negativo"
+    }
+   ],
+   "lectura": "Facebook es la red que más distorsiona al amplificar tanto experiencias positivas como negativas, generando un debate intenso y a veces contradictorio sobre la seguridad en Tulum, mientras los medios tradicionales suelen enfocarse en los incidentes negativos.",
+   "fuentes": [
+    "Refuerzan coordinación de seguridad para mantener la tranquilidad en Tulum — El Heraldo de México",
+    "\"No bajaremos la guardia\": Diego Castañón encabeza evaluación de seguridad en Tulum — Diario 24 Horas Quintana Roo",
+    "Refuerzan coordinación para mantener la seguridad en Tulum — sipse.com"
+   ]
+  }
+ ]
+}
