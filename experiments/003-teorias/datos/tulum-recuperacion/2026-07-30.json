@@ -1,0 +1,251 @@
+{
+ "fecha": "2026-07-30",
+ "teoria": "Tulum se va a recuperar",
+ "mediciones": [
+  {
+   "tema": "Tulum turismo recuperación",
+   "indice_neutro": 48,
+   "tendencia": "subiendo",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 60,
+     "d": 12,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 75,
+     "d": 27,
+     "s": "negativo"
+    },
+    {
+     "n": "YouTube",
+     "i": 80,
+     "d": 32,
+     "s": "negativo"
+    },
+    {
+     "n": "TikTok",
+     "i": 40,
+     "d": -8,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 50,
+     "d": 2,
+     "s": "negativo"
+    },
+    {
+     "n": "Medios",
+     "i": 35,
+     "d": -13,
+     "s": "neutro"
+    }
+   ],
+   "lectura": "Reddit y YouTube distorsionan más la realidad, amplificando la percepción negativa del destino a través de experiencias personales y quejas.",
+   "fuentes": [
+    "Tulum: Sheinbaum es elogiada por hoteleros ante plan de recuperación — REPORTUR.com",
+    "Hoteleros respaldan plan para recuperar el turismo en Tulum y fortalecer la Riviera Maya — La Region Tamaulipas",
+    "Tulum podría recuperar turismo hasta en un año — 24 HORAS | El Diario sin Límites"
+   ]
+  },
+  {
+   "tema": "sargazo Tulum",
+   "indice_neutro": 65,
+   "tendencia": "subiendo",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 70,
+     "d": 5,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 80,
+     "d": 15,
+     "s": "negativo"
+    },
+    {
+     "n": "YouTube",
+     "i": 90,
+     "d": 25,
+     "s": "negativo"
+    },
+    {
+     "n": "TikTok",
+     "i": 60,
+     "d": -5,
+     "s": "negativo"
+    },
+    {
+     "n": "Facebook",
+     "i": 70,
+     "d": 5,
+     "s": "negativo"
+    },
+    {
+     "n": "Medios",
+     "i": 50,
+     "d": -15,
+     "s": "negativo"
+    }
+   ],
+   "lectura": "Reddit y YouTube son las redes que más amplifican el tema, probablemente por el contenido visual (videos, fotos de usuarios) que evidencia la magnitud del problema y genera discusión entre viajeros afectados y potenciales turistas.",
+   "fuentes": [
+    "“Tulum y Playa del Carmen están atiborrados de sargazo. Tuve que ir a Holbox”: poblanos en Cancún — El Sol de México",
+    "Sargazo excesivo de 11 playas se concentra en Tulum y Mahahual — REPORTUR.com",
+    "Sargazo causa crisis económica y turística en Tulum; se desploman ventas y cierran negocios — La Jornada"
+   ]
+  },
+  {
+   "tema": "aeropuerto Tulum vuelos",
+   "indice_neutro": 0,
+   "tendencia": "estable",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "Reddit",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "YouTube",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "TikTok",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "Medios",
+     "i": 0,
+     "d": 0,
+     "s": "neutro"
+    }
+   ],
+   "lectura": "Ninguna red distorsiona, la información es mayormente neutra y objetiva.",
+   "fuentes": [
+    "Tulum: fracasa el aeropuerto al caer vuelos pese a Cuba y Jamaica — REPORTUR.com",
+    "✈ Viaje de Medellín a Tulum — Google",
+    "Promueven incentivos de aeropuertos en Tulum para incremento de vuelos — El Heraldo de México"
+   ]
+  },
+  {
+   "tema": "Tren Maya Tulum",
+   "indice_neutro": 40,
+   "tendencia": "estable",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 50,
+     "d": 10,
+     "s": "neutro"
+    },
+    {
+     "n": "Reddit",
+     "i": 20,
+     "d": -20,
+     "s": "neutro"
+    },
+    {
+     "n": "YouTube",
+     "i": 60,
+     "d": 20,
+     "s": "neutro"
+    },
+    {
+     "n": "TikTok",
+     "i": 40,
+     "d": 0,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 50,
+     "d": 10,
+     "s": "neutro"
+    },
+    {
+     "n": "Medios",
+     "i": 20,
+     "d": -20,
+     "s": "negativo"
+    }
+   ],
+   "lectura": "YouTube es la red que más amplifica el tema debido a su formato visual que permite mostrar avances, experiencias de viaje y detalles de la infraestructura de manera atractiva.",
+   "fuentes": [
+    "Ejército desplaza al INAH para cobrar entrada a Zona Arqueológica de Tulum y destinarlo al Tren Maya — Diario de Yucatán",
+    "Tren Maya y Mexicana de Aviación impulsan estrategia para fortalecer el turismo en Tulum — El Heraldo de México",
+    "Más recursos, otra vez, al Tren Maya — Hora Cero Web"
+   ]
+  },
+  {
+   "tema": "seguridad Tulum",
+   "indice_neutro": 48,
+   "tendencia": "estable",
+   "plataformas": [
+    {
+     "n": "X",
+     "i": 60,
+     "d": 13,
+     "s": "negativo"
+    },
+    {
+     "n": "Reddit",
+     "i": 80,
+     "d": 33,
+     "s": "negativo"
+    },
+    {
+     "n": "YouTube",
+     "i": 40,
+     "d": -7,
+     "s": "neutro"
+    },
+    {
+     "n": "TikTok",
+     "i": 30,
+     "d": -17,
+     "s": "neutro"
+    },
+    {
+     "n": "Facebook",
+     "i": 50,
+     "d": 3,
+     "s": "negativo"
+    },
+    {
+     "n": "Medios",
+     "i": 25,
+     "d": -22,
+     "s": "negativo"
+    }
+   ],
+   "lectura": "Reddit es la red que más distorsiona la realidad, amplificando la percepción de riesgo debido a la naturaleza de las discusiones entre usuarios que comparten experiencias personales negativas.",
+   "fuentes": [
+    "Vuelca pipa con 52 mil litros de chapopote en Tulum — Quintana Roo Hoy",
+    "Madrugada violenta: un hombre fallecido y una mujer lesionada, saldo de un ataque en Tulum — Diario 24 Horas Quintana Roo",
+    "Fiscalía investiga presunto envenenamiento de perros en parque de Tulum — El Popular, periodismo con causa"
+   ]
+  }
+ ]
+}
